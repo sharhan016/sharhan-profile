@@ -14,17 +14,14 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => setScrolled(latest > 24));
 
   return (
-    <motion.header
+    <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
         scrolled || open
-          ? "border-ink/10 bg-paper/90 backdrop-blur-xl"
+          ? "border-ink/12 bg-paper/95 shadow-[0_1px_0_rgb(16_17_18_/_0.04)] backdrop-blur-lg supports-[backdrop-filter]:bg-paper/88"
           : "border-transparent bg-transparent"
       }`}
-      initial={reduceMotion ? false : { opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.15 }}
     >
-      <nav className="page-shell flex h-18 items-center justify-between" aria-label="Primary navigation">
+      <nav className="page-shell flex h-[4.5rem] items-center justify-between" aria-label="Primary navigation">
         <a href="#top" className="text-[13px] font-semibold tracking-[0.26em] focus-ring">
           SHARHAN
         </a>
@@ -74,6 +71,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

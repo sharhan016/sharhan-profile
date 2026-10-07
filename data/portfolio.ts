@@ -1,7 +1,7 @@
 export const navigation = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
-  { label: "Writing", href: "#writing" },
+  // { label: "Writing", href: "#writing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -36,36 +36,12 @@ export type PortfolioProject = {
   technologies: string[];
   motif: string;
   note?: string;
-  url?: string;
+  links?: { label: string; href: string }[];
 };
 
 export const projects: PortfolioProject[] = [
   {
     number: "01",
-    title: "Vertex Harness",
-    description:
-      "An experimental engineering harness for making coding-agent workflows more reliable, verifiable and recoverable.",
-    technologies: ["Python", "MCP", "Agent workflows", "Pytest"],
-    motif: "vertex",
-  },
-  {
-    number: "02",
-    title: "AiNad",
-    description:
-      "An AI-assisted travel booking workflow around multi-portal flight search, automation, passenger profiles and booking operations.",
-    technologies: [
-      "Python",
-      "Playwright",
-      "Tauri",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Rust",
-    ],
-    motif: "route",
-  },
-  {
-    number: "03",
     title: "LedgerLens",
     description:
       "A multi-tenant banking knowledge assistant demonstrating governed RAG through tenant and role-constrained hybrid retrieval, reranking, citations and grounding checks.",
@@ -85,9 +61,42 @@ export const projects: PortfolioProject[] = [
       "Vite",
     ],
     motif: "ledger",
-    note: "Optional Sentence Transformers / CrossEncoder reranking",
-    url: "https://ledgerlens.sharhan.dev/",
+    note: "Built around a synthetic banking-policy corpus; Sentence Transformers / CrossEncoder reranking is optional",
+    links: [
+      { label: "Live demo", href: "https://ledgerlens.sharhan.dev/" },
+      { label: "Source", href: "https://github.com/sharhan016/LedgerLens" },
+    ],
   },
+  {
+    number: "02",
+    title: "Vertex Harness",
+    description:
+      "A Python-first, repository-local development harness for verifiable and recoverable software work, with CLI workflows, durable evidence, repository intelligence, read-only MCP and a local dashboard.",
+    technologies: ["Python 3.11+", "Python standard library", "MCP", "Pytest", "Ruff"],
+    motif: "vertex",
+    note: "Development tool to enhance and audit the development lifecycle of an application",
+    links: [{ label: "Source", href: "https://github.com/sharhan016/vertex-harness" }],
+  },
+  {
+    number: "03",
+    title: "AiNad",
+    description:
+      "A voice-first desktop assistant designed to accelerate flight search and booking workflows across portal applications through speech-driven automation.",
+    technologies: [
+      "Python",
+      "faster-whisper",
+      "Playwright",
+      "Tauri 2",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Rust",
+    ],
+    motif: "route",
+    note: "Designed to enhance the efficiency and speed for flight search and booking in different portal applications",
+    links: [{ label: "Source", href: "https://github.com/sharhan016/aiNad" }],
+  },
+  /* Enterprise E-commerce is intentionally hidden until its portfolio treatment is revisited.
   {
     number: "04",
     title: "Enterprise E-commerce",
@@ -96,6 +105,7 @@ export const projects: PortfolioProject[] = [
     technologies: ["Flutter", "Firebase", "Analytics"],
     motif: "commerce",
   },
+  */
 ];
 
 export const capabilities = [
@@ -144,15 +154,17 @@ export const capabilities = [
   },
 ];
 
+/* Writing is intentionally hidden until the section is revisited.
 export const writing = [
-  "Building reliable AI agents requires more than a good model.",
-  "Why context engineering matters.",
-  "RAG is a systems problem, not just a vector database.",
-  "Designing software around agents instead of adding agents to software.",
+  { title: "Building reliable AI agents requires more than a good model.", topic: "Agent systems" },
+  { title: "Why context engineering matters.", topic: "Context" },
+  { title: "RAG is a systems problem, not just a vector database.", topic: "Retrieval" },
+  { title: "Designing software around agents instead of adding agents to software.", topic: "Architecture" },
 ];
+*/
 
 export const socialLinks = [
-  { label: "LinkedIn", href: "#" },
-  { label: "GitHub", href: "#" },
-  { label: "Email", href: "mailto:hello@example.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sharhan-sathar/" },
+  { label: "GitHub", href: "https://github.com/sharhan016" },
+  { label: "Email", href: "mailto:sharhan.sathar@gmail.com" },
 ];

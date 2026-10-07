@@ -50,25 +50,31 @@ export function Work() {
                   </h3>
                   <p className="mt-7 max-w-lg text-base leading-7 text-white/55 sm:text-lg">{project.description}</p>
                   {project.note && (
-                    <p className="mt-4 font-mono text-[9px] uppercase leading-5 tracking-[0.14em] text-white/36">
+                    <p className="mt-4 font-mono text-[10px] uppercase leading-5 tracking-[0.12em] text-white/52">
                       {project.note}
                     </p>
                   )}
-                  {project.url && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-7 inline-flex items-center gap-2 border-b border-white/28 pb-1 font-mono text-[10px] uppercase tracking-[0.16em] text-white/62 transition-colors hover:border-white hover:text-white focus-ring"
-                    >
-                      Visit project
-                      <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                    </a>
+                  {project.links && (
+                    <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3" aria-label={`${project.title} links`}>
+                      {project.links.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`${link.label} for ${project.title} (opens in a new tab)`}
+                          className="inline-flex items-center gap-2 border-b border-white/32 pb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-white/68 transition-colors hover:border-white hover:text-white focus-ring"
+                        >
+                          {link.label}
+                          <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </div>
                 <ul className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/16 pt-5" aria-label={`${project.title} technologies`}>
                   {project.technologies.map((technology) => (
-                    <li key={technology} className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/44">{technology}</li>
+                    <li key={technology} className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/55">{technology}</li>
                   ))}
                 </ul>
               </div>

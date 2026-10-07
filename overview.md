@@ -36,6 +36,7 @@ The page uses server components by default. Client components are limited to ele
 ```text
 app/
 ├── globals.css              Global design system and responsive styling
+├── icon.svg                 Monogram browser/search icon
 ├── layout.tsx               Root layout, fonts, and metadata
 └── page.tsx                 Top-level page composition
 
@@ -82,7 +83,6 @@ Root layout
 │   ├── Experience
 │   ├── Selected Work
 │   ├── Engineering / Capabilities
-│   ├── Writing / Notes
 │   └── Contact
 └── Footer
 ```
@@ -100,7 +100,6 @@ Component: `components/Navbar.tsx`
 - Right:
   - `WORK` → `#work`
   - `ABOUT` → `#about`
-  - `WRITING` → `#writing`
   - `CONTACT` → `#contact`
 - Transparent at the top of the page.
 - On scroll, it gains:
@@ -113,7 +112,7 @@ Component: `components/Navbar.tsx`
 
 - Brand remains on the left.
 - Menu icon is on the right.
-- Opening the menu reveals four full-width navigation links beneath the bar.
+- Opening the menu reveals three full-width navigation links beneath the bar.
 - The menu closes when a destination is selected.
 - The trigger exposes proper expanded/collapsed accessibility state.
 
@@ -134,10 +133,10 @@ The hero is the most visually important part of the site.
 
 ### Hero content
 
-Location metadata:
+Positioning metadata:
 
 ```text
-BENGALURU, INDIA
+AI SYSTEMS · PRODUCT SOFTWARE
 ```
 
 Primary heading:
@@ -149,7 +148,7 @@ SHARHAN
 Role:
 
 ```text
-Software Engineer
+Senior Software Engineer
 ```
 
 Introduction:
@@ -161,7 +160,7 @@ I build software, AI systems and automation for real-world problems.
 Actions:
 
 - `VIEW WORK` → `#work`
-- `GET IN TOUCH` → `#contact`
+- `GET IN TOUCH` → `mailto:sharhan.sathar@gmail.com`
 
 Supporting desktop metadata:
 
@@ -222,15 +221,15 @@ THOUGHTFUL EXECUTION
 Primary statement:
 
 ```text
-I'm a software engineer focused on building useful products and reliable systems.
+I build product software and AI systems where reliability, constraints and clear evidence matter.
 ```
 
 Supporting copy:
 
 ```text
-My work spans product engineering, backend systems, automation and AI-powered workflows.
+My work spans governed retrieval, agent tooling, browser automation and production application engineering across Python, TypeScript and Flutter.
 
-I enjoy taking ambiguous problems, understanding the system behind them and turning them into software that actually works.
+I like turning ambiguous workflows into bounded systems with explicit inputs, observable behavior, recoverable failure and software people can actually use.
 ```
 
 The lead sentence uses oversized editorial typography. The supporting paragraphs form a restrained two-column layout on larger screens.
@@ -297,44 +296,7 @@ Projects alternate between text-first and visual-first layouts on desktop. On mo
 
 No fake application screenshots, customer logos, project metrics, or case-study results are used. Project imagery is generated through CSS as abstract, typographic engineering compositions.
 
-### Project 01 — Vertex Harness
-
-Description:
-
-```text
-An experimental engineering harness for making coding-agent workflows more reliable, verifiable and recoverable.
-```
-
-Technology:
-
-- Python
-- MCP
-- Agent workflows
-- Pytest
-
-Visual motif: concentric system/orbit geometry with the caption `VERIFY / RECOVER`.
-
-### Project 02 — AiNad
-
-Description:
-
-```text
-An AI-assisted travel booking workflow around multi-portal flight search, automation, passenger profiles and booking operations.
-```
-
-Technology:
-
-- Python
-- Playwright
-- Tauri
-- React
-- TypeScript
-- Node.js
-- Rust
-
-Visual motif: angled route geometry with the caption `SEARCH / ROUTE`.
-
-### Project 03 — LedgerLens
+### Project 01 — LedgerLens
 
 Description:
 
@@ -358,27 +320,62 @@ Technology:
 - TypeScript
 - Vite
 
-Sentence Transformers and CrossEncoder reranking are optional rather than mandatory dependencies.
+The project uses a synthetic banking-policy corpus. Sentence Transformers and CrossEncoder reranking are optional rather than mandatory dependencies.
 
 Project URL: `https://ledgerlens.sharhan.dev/`
 
+Source: `https://github.com/sharhan016/LedgerLens`
+
 Visual motif: layered ledger/retrieval geometry with the caption `GOVERN / GROUND`.
 
-### Project 04 — Enterprise E-commerce
+### Project 02 — Vertex Harness
 
 Description:
 
 ```text
-Large-scale Flutter engineering work involving production application development, analytics, QA and enterprise workflows.
+A Python-first, repository-local development harness for verifiable and recoverable software work, with CLI workflows, durable evidence, repository intelligence, read-only MCP and a local dashboard.
 ```
 
 Technology:
 
-- Flutter
-- Firebase
-- Analytics
+- Python 3.11+
+- Python standard library
+- MCP
+- Pytest
+- Ruff
 
-Visual motif: scaled grid/orbit geometry with the caption `SCALE / OPERATE`.
+Positioning note: development tool to enhance and audit the development lifecycle of an application.
+
+Source: `https://github.com/sharhan016/vertex-harness`
+
+Visual motif: concentric system/orbit geometry with the caption `VERIFY / RECOVER`.
+
+### Project 03 — AiNad
+
+Description:
+
+```text
+A voice-first desktop assistant designed to accelerate flight search and booking workflows across portal applications through speech-driven automation.
+```
+
+Technology:
+
+- Python
+- faster-whisper
+- Playwright
+- Tauri 2
+- React
+- TypeScript
+- Node.js
+- Rust
+
+Positioning note: designed to enhance the efficiency and speed for flight search and booking in different portal applications.
+
+Source: `https://github.com/sharhan016/aiNad`
+
+Visual motif: angled route geometry with the caption `SEARCH / ROUTE`.
+
+Enterprise E-commerce is commented out in the project data and its visual-specific CSS until the project is revisited.
 
 ### Project interactions
 
@@ -388,7 +385,7 @@ Visual motif: scaled grid/orbit geometry with the caption `SCALE / OPERATE`.
 - metadata uses understated opacity transitions
 - each project reveals while entering the viewport
 
-LedgerLens links to its deployed project. The other projects currently remain non-clickable previews.
+LedgerLens links to its live demo and source repository. Vertex Harness and AiNad link to their source repositories. All external links are explicitly labeled and open in a new tab.
 
 ## 10. Engineering / Capabilities
 
@@ -449,26 +446,9 @@ The section uses a prominent full-width AI Systems group followed by three edito
 
 Individual capabilities gain a small left inset and muted color on hover.
 
-## 11. Writing / Notes
+## 11. Temporarily disabled content
 
-Component: `components/Writing.tsx`
-
-Anchor: `#writing`
-
-Section label:
-
-```text
-05 — WRITING / NOTES
-```
-
-Current placeholders:
-
-1. `Building reliable AI agents requires more than a good model.`
-2. `Why context engineering matters.`
-3. `RAG is a systems problem, not just a vector database.`
-4. `Designing software around agents instead of adding agents to software.`
-
-Every item is labeled `DRAFT`. These are intentionally non-clickable placeholders. No article content has been fabricated.
+The Writing navigation entry, page import/render, data, and component implementation are commented out until the section is reconsidered. Enterprise E-commerce data and its visual-specific CSS are also commented out. Neither appears in the rendered site.
 
 ## 12. Contact
 
@@ -481,7 +461,7 @@ Background: muted warm clay.
 Section label:
 
 ```text
-06 — CONTACT
+05 — CONTACT
 ```
 
 Headline:
@@ -494,7 +474,7 @@ SOMETHING USEFUL.
 Supporting copy:
 
 ```text
-If you're working on a difficult product, workflow or automation problem, I'd be interested in hearing about it.
+I'm interested in difficult product, workflow and automation problems—especially where reliability and clear system boundaries matter.
 ```
 
 CTA:
@@ -503,7 +483,7 @@ CTA:
 GET IN TOUCH
 ```
 
-The email currently points to the placeholder `mailto:hello@example.com` and must be replaced when the real email is supplied.
+The CTA opens a message to `sharhan.sathar@gmail.com`.
 
 ## 13. Footer
 
@@ -515,7 +495,7 @@ Identity block:
 
 ```text
 SHARHAN
-Software Engineer
+Senior Software Engineer
 Bengaluru, India
 ```
 
@@ -525,7 +505,7 @@ Links:
 - GitHub
 - Email
 
-LinkedIn and GitHub currently use `#`. Email currently uses `mailto:hello@example.com`.
+LinkedIn uses `https://www.linkedin.com/in/sharhan-sathar/`, GitHub uses `https://github.com/sharhan016`, and Email uses `mailto:sharhan.sathar@gmail.com`. The site contains no dead `#` links or placeholder contact details.
 
 All link values live in `data/portfolio.ts` so they can be replaced centrally without editing the footer component.
 
@@ -539,7 +519,7 @@ All repeatable content is centralized in `data/portfolio.ts`:
 - `experience`
 - `projects`
 - `capabilities`
-- `writing`
+- `writing` (currently commented out)
 - `socialLinks`
 
 When changing content, update this file before hardcoding values in presentation components.
@@ -714,15 +694,12 @@ Provides viewport-triggered opacity and vertical movement with optional delay an
 
 ## 21. Placeholders that still require real values
 
-The following values are intentionally not invented:
+The following values are intentionally not invented and remain unavailable:
 
-- LinkedIn URL
-- GitHub URL
-- email address
-- project URLs
+- canonical public portfolio URL
 - article URLs or article bodies
 
-Update `socialLinks` in `data/portfolio.ts` when contact URLs are available.
+LinkedIn, email, the GitHub profile, three public project repositories, and the LedgerLens live demo are connected. Update `socialLinks` in `data/portfolio.ts` if those contact details change. Add `metadataBase` and canonical metadata in `app/layout.tsx` when the public portfolio domain is known.
 
 Do not invent:
 
@@ -798,7 +775,7 @@ The most recent verified state passed:
 - production compilation
 - static page generation
 - browser rendering at all required widths
-- production dependency audit with no known production vulnerabilities
+- no placeholder email or `href="#"` links
 
 ## 24. Rules for future modifications
 

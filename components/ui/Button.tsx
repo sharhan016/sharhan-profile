@@ -16,10 +16,13 @@ export function Button({
   direction?: "up" | "down";
 }) {
   const Icon = direction === "down" ? ArrowDownRight : ArrowUpRight;
+  const isExternal = href.startsWith("http");
 
   return (
     <motion.a
       href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer" : undefined}
       className={cn(
         "group inline-flex min-h-12 items-center justify-between gap-8 border px-5 text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-300",
         variant === "dark" && "border-ink bg-ink text-paper hover:bg-transparent hover:text-ink",

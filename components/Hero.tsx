@@ -28,8 +28,8 @@ export function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={item} className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.26em] text-ink/50">
-            <span className="h-px w-7 bg-ink/40" /> Bengaluru, India
+          <motion.div variants={item} className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/58">
+            <span className="h-px w-7 bg-ink/40" /> AI systems · Product software
           </motion.div>
 
           <div className="py-16 sm:py-20 lg:py-10">
@@ -39,14 +39,14 @@ export function Hero() {
               </motion.h1>
             </div>
             <motion.p variants={item} className="mt-2 text-[12px] font-medium uppercase tracking-[0.3em] text-ink/64 sm:text-[14px]">
-              Software Engineer
+              Senior Software Engineer
             </motion.p>
             <motion.p variants={item} className="mt-10 max-w-md text-xl leading-[1.5] tracking-[-0.02em] text-ink/65 sm:text-2xl">
               I build software, AI systems and automation for real-world problems.
             </motion.p>
             <motion.div variants={item} className="mt-9 flex flex-wrap gap-3">
               <Button href="#work" direction="down">View work</Button>
-              <Button href="#contact" variant="line">Get in touch</Button>
+              <Button href="mailto:sharhan.sathar@gmail.com" variant="line">Get in touch</Button>
             </motion.div>
           </div>
 
