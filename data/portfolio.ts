@@ -170,7 +170,7 @@ export const capabilities = [
   },
   {
     title: "Backend & Infrastructure",
-    skills: ["PostgreSQL", "MongoDB", "Firebase", "Docker", "AWS", "GCP", "CI/CD"],
+    skills: ["PostgreSQL", "Firebase", "Docker", "AWS", "GCP", "CI/CD"],
   },
 ];
 
@@ -185,6 +185,6 @@ export const writing = [
 
 export const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sharhan-sathar/" },
-  { label: "GitHub", href: "https://github.com/sharhan016" },
+  // { label: "GitHub", href: "https://github.com/sharhan016" },
   { label: "Email", href: "mailto:sharhan.sathar@gmail.com" },
 ];
