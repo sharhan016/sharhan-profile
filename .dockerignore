@@ -1,0 +1,12 @@
+.git
+.github
+.next
+node_modules
+docs
+tests
+.DS_Store
+*.log
+.env*
+Dockerfile*
+docker-compose*.yml
+overview.md

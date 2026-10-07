@@ -36,6 +36,7 @@ The page uses server components by default. Client components are limited to ele
 ```text
 app/
 ├── globals.css              Global design system and responsive styling
+├── health/ready/route.ts    Container and public deployment readiness endpoint
 ├── icon.svg                 Monogram browser/search icon
 ├── layout.tsx               Root layout, fonts, and metadata
 └── page.tsx                 Top-level page composition
@@ -68,6 +69,15 @@ public/
 
 tests/
 └── visual_check.py          Browser checks across all required breakpoints
+
+Dockerfile                           Multi-stage standalone Next.js image
+docker-compose.production.yml        Hostinger and Traefik runtime contract
+.github/workflows/
+└── deploy-hostinger.yml             Verified main-branch deployment workflow
+scripts/verify/
+└── hostinger-deployment.sh          Compose and routing contract validation
+docs/deployment/
+└── hostinger.md                     Operator setup and deployment guide
 ```
 
 ## 4. Page hierarchy
@@ -661,7 +671,25 @@ Maintain these behaviors when editing components.
 - Client-side JavaScript is used only for interactive navigation, motion, and the hero parallax.
 - Project artwork is CSS-based rather than loading fabricated screenshots.
 
-## 20. Shared UI primitives
+## 20. Production deployment
+
+The portfolio is prepared for `https://sharhan.dev` using the same Hostinger pattern as LedgerLens:
+
+```text
+GitHub → GitHub Actions → Hostinger VPS → Docker Compose → existing Traefik → sharhan.dev
+```
+
+- `next.config.ts` enables Next.js standalone output.
+- `Dockerfile` creates a multi-stage Node.js 22 Alpine image and runs the standalone server as an unprivileged user.
+- `docker-compose.production.yml` defines the independent `sharhan-portfolio` project and exposes only container port 3000 to Traefik discovery.
+- Traefik routing is label-driven with canonical ``Host(`sharhan.dev`)`` and alias ``Host(`www.sharhan.dev`)`` routers, `websecure`, TLS, and the existing `letsencrypt` resolver. The `www` router permanently redirects to the matching path on the apex domain.
+- No host ports, external Traefik network, persistent volume, database, or application runtime secrets are used.
+- `/health/ready` is the container and public readiness endpoint.
+- `.github/workflows/deploy-hostinger.yml` verifies, containerizes, smoke-tests, validates, and then calls Hostinger's official deployment action after pushes to `main`.
+
+The complete one-time VPS checklist, GitHub configuration, troubleshooting guidance, and rollback process live in `docs/deployment/hostinger.md`. The repository does not deploy itself during local preparation and does not modify Traefik, LedgerLens, or Cloudflare DNS.
+
+## 21. Shared UI primitives
 
 ### Button
 
@@ -692,14 +720,13 @@ File: `components/ui/Reveal.tsx`
 
 Provides viewport-triggered opacity and vertical movement with optional delay and reduced-motion support.
 
-## 21. Placeholders that still require real values
+## 22. Placeholders that still require real values
 
 The following values are intentionally not invented and remain unavailable:
 
-- canonical public portfolio URL
 - article URLs or article bodies
 
-LinkedIn, email, the GitHub profile, three public project repositories, and the LedgerLens live demo are connected. Update `socialLinks` in `data/portfolio.ts` if those contact details change. Add `metadataBase` and canonical metadata in `app/layout.tsx` when the public portfolio domain is known.
+The canonical portfolio URL is `https://sharhan.dev`. LinkedIn, email, the GitHub profile, three public project repositories, and the LedgerLens live demo are connected. Update `socialLinks` in `data/portfolio.ts` if those contact details change.
 
 Do not invent:
 
@@ -715,7 +742,7 @@ Do not invent:
 - customer logos
 - case-study outcomes
 
-## 22. Running the project
+## 23. Running the project
 
 Install dependencies:
 
@@ -753,7 +780,13 @@ Run the built site:
 npm run start
 ```
 
-## 23. Verification
+Validate the production deployment definition:
+
+```bash
+sh scripts/verify/hostinger-deployment.sh
+```
+
+## 24. Verification
 
 Automated responsive checks are available in `tests/visual_check.py`.
 
@@ -764,7 +797,7 @@ The test checks:
 - the portrait loads successfully
 - body and document widths do not exceed the viewport
 - no browser console or page errors occur
-- mobile navigation exposes all four links
+- mobile navigation exposes all three active links
 - animated section content becomes visible
 - screenshots can be captured for every required breakpoint
 
@@ -776,8 +809,10 @@ The most recent verified state passed:
 - static page generation
 - browser rendering at all required widths
 - no placeholder email or `href="#"` links
+- production Compose and Traefik routing invariants
+- standalone production server startup and `/health/ready`
 
-## 24. Rules for future modifications
+## 25. Rules for future modifications
 
 Before changing the site:
 

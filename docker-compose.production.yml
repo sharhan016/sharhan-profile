@@ -1,0 +1,49 @@
+name: sharhan-portfolio
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      HOSTNAME: 0.0.0.0
+      PORT: "3000"
+    expose:
+      - "3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/health/ready').then((response) => { if (!response.ok) process.exit(1) }).catch(() => process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.sharhan-portfolio.rule=Host(`sharhan.dev`)
+      - traefik.http.routers.sharhan-portfolio.entrypoints=websecure
+      - traefik.http.routers.sharhan-portfolio.tls=true
+      - traefik.http.routers.sharhan-portfolio.tls.certresolver=letsencrypt
+      - traefik.http.routers.sharhan-portfolio.service=sharhan-portfolio
+      - traefik.http.routers.sharhan-portfolio-www.rule=Host(`www.sharhan.dev`)
+      - traefik.http.routers.sharhan-portfolio-www.entrypoints=websecure
+      - traefik.http.routers.sharhan-portfolio-www.tls=true
+      - traefik.http.routers.sharhan-portfolio-www.tls.certresolver=letsencrypt
+      - traefik.http.routers.sharhan-portfolio-www.service=sharhan-portfolio
+      - traefik.http.routers.sharhan-portfolio-www.middlewares=sharhan-portfolio-www-redirect
+      - traefik.http.middlewares.sharhan-portfolio-www-redirect.redirectregex.regex=^https?://www[.]sharhan[.]dev/(.*)
+      - traefik.http.middlewares.sharhan-portfolio-www-redirect.redirectregex.replacement=https://sharhan.dev/$${1}
+      - traefik.http.middlewares.sharhan-portfolio-www-redirect.redirectregex.permanent=true
+      - traefik.http.services.sharhan-portfolio.loadbalancer.server.port=3000
+    networks:
+      - application
+
+networks:
+  application:
