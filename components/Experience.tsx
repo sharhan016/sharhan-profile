@@ -29,12 +29,32 @@ export function Experience() {
                       {item.company}
                     </h3>
                     <p className="mt-2 text-sm text-ink/55">{item.role}</p>
+                    <div className="mt-3 flex flex-col gap-2 sm:hidden">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/52">{item.period}</p>
+                      {item.location && <p className="text-xs uppercase tracking-[0.13em] text-ink/42">{item.location}</p>}
+                    </div>
+                    <Reveal delay={0.08} className="mt-5 max-w-[62ch]">
+                      <ul className="space-y-3 text-[15px] leading-[1.55] text-ink/64">
+                        {item.highlights.map((highlight) => (
+                          <li key={highlight} className="flex gap-3 before:mt-[0.7em] before:block before:h-px before:w-3 before:shrink-0 before:bg-ink/36 before:content-['']">
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </Reveal>
+                    <Reveal delay={0.12} className="mt-5">
+                      <ul aria-label={`${item.company} technology stack`} className="flex flex-wrap gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.14em] text-ink/52">
+                        {item.stack.map((technology) => (
+                          <li key={technology}>{technology}</li>
+                        ))}
+                      </ul>
+                    </Reveal>
                   </div>
                 </div>
-                <div className="sm:col-span-3 sm:pt-2">
+                <div className="hidden sm:block sm:col-span-3 sm:pt-2">
                   <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/52">{item.period}</p>
                 </div>
-                <div className="sm:col-span-3 sm:pt-2 sm:text-right">
+                <div className="hidden sm:block sm:col-span-3 sm:pt-2 sm:text-right">
                   {item.location && <p className="text-xs uppercase tracking-[0.13em] text-ink/42">{item.location}</p>}
                 </div>
               </article>

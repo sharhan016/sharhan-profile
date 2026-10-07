@@ -6,8 +6,8 @@ export function Footer() {
     <footer className="bg-ink py-10 text-paper">
       <div className="page-shell grid gap-10 sm:grid-cols-12 sm:items-end">
         <div className="sm:col-span-5">
-          <p className="text-xl font-semibold tracking-[0.2em]">SHARHAN</p>
-          <p className="mt-3 text-sm text-white/58">Senior Software Engineer</p>
+          <p className="text-xl font-semibold tracking-[0.2em]">SHARHAN SATHAR</p>
+          <p className="mt-3 text-sm text-white/58">AI Engineer</p>
           <p className="mt-1 text-sm text-white/58">Bengaluru, India</p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-3 sm:col-span-5 sm:justify-center">

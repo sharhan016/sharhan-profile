@@ -4,7 +4,7 @@ This document is the canonical handoff guide for the portfolio. It describes the
 
 ## 1. Project purpose
 
-This is a premium personal portfolio for **Sharhan**, a senior software engineer based in Bengaluru, India.
+This is a premium personal portfolio for **Sharhan**, an AI Engineer based in Bengaluru, India.
 
 The site is intended to communicate quiet technical confidence through:
 
@@ -158,7 +158,7 @@ SHARHAN
 Role:
 
 ```text
-Senior Software Engineer
+AI Engineer
 ```
 
 Introduction:
@@ -261,21 +261,24 @@ The section uses a spacious editorial timeline/list rather than a traditional r�
 ### Entries
 
 1. **Logixal Solutions Pvt Ltd**
-   - Senior Software Engineer
+   - AI Engineer
    - Dec 2024 — Present
    - Bengaluru, India
 
 2. **Ampcome Technologies**
-   - Software Engineer
+   - Senior Software Engineer
    - Mar 2021 — Oct 2024
+   - Bengaluru, India
 
 3. **Dataviv**
    - Software Engineer
    - Aug 2020 — Feb 2021
+   - Mumbai, India
 
 4. **De Sparrow Solutions**
    - Software Engineer
    - Nov 2019 — Jun 2020
+   - Calicut, India
 
 Rows reveal while scrolling. Company names shift slightly on hover. There are no invented job details, achievements, or metrics.
 
@@ -348,7 +351,7 @@ A Python-first, repository-local development harness for verifiable and recovera
 
 Technology:
 
-- Python 3.11+
+- Python
 - Python standard library
 - MCP
 - Pytest

@@ -4,17 +4,17 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sharhan.dev"),
-  title: "Sharhan — Senior Software Engineer",
+  title: "Sharhan — AI Engineer",
   description:
-    "Senior software engineer building governed AI systems, developer tooling, automation and reliable product software.",
-  keywords: ["Sharhan", "Senior Software Engineer", "AI Systems", "Governed RAG", "Agent Workflows", "Product Engineering"],
+    "AI Engineer building governed AI systems, developer tooling, automation and reliable product software.",
+  keywords: ["Sharhan","AI Engineer", "Senior Software Engineer", "AI Systems", "Governed RAG", "Agent Workflows", "Product Engineering"],
   authors: [{ name: "Sharhan" }],
   creator: "Sharhan",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Sharhan — Senior Software Engineer",
+    title: "Sharhan — AI Engineer",
     description: "Governed AI systems, developer tooling, automation and reliable product software.",
     type: "website",
     url: "/",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Sharhan — Senior Software Engineer",
+    title: "Sharhan — AI Engineer",
     description: "Governed AI systems, developer tooling, automation and reliable product software.",
   },
 };

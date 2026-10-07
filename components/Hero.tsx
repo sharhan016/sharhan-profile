@@ -29,7 +29,7 @@ export function Hero() {
           animate="visible"
         >
           <motion.div variants={item} className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink/58">
-            <span className="h-px w-7 bg-ink/40" /> AI systems · Product software
+            <span className="h-px w-7 bg-ink/40" /> BUILDING RELIABLE AI SYSTEMS
           </motion.div>
 
           <div className="py-16 sm:py-20 lg:py-10">
@@ -38,11 +38,23 @@ export function Hero() {
                 SHARHAN
               </motion.h1>
             </div>
-            <motion.p variants={item} className="mt-2 text-[12px] font-medium uppercase tracking-[0.3em] text-ink/64 sm:text-[14px]">
-              Senior Software Engineer
+            {/* <motion.p variants={item} className="mt-2 text-[12px] font-medium uppercase tracking-[0.3em] text-ink/64 sm:text-[14px]">
+              AI Engineer
+            </motion.p> */}
+            <motion.p
+              variants={item}
+              className="mt-3 flex flex-col gap-1 uppercase sm:flex-row sm:items-center sm:gap-4"
+            >
+              <span className="text-[12px] font-medium tracking-[0.3em] text-ink sm:text-[14px]">
+                AI Engineer
+              </span>
+              <span aria-hidden="true" className="hidden h-px w-6 bg-ink/30 sm:block" />
+              <span className="text-[11px] font-medium tracking-[0.18em] text-ink/64 sm:text-[12px]">
+                Agentic Systems &amp; Production LLMs
+              </span>
             </motion.p>
             <motion.p variants={item} className="mt-10 max-w-md text-xl leading-[1.5] tracking-[-0.02em] text-ink/65 sm:text-2xl">
-              I build software, AI systems and automation for real-world problems.
+              I build AI systems, custom apps and automation for real-world problems.
             </motion.p>
             <motion.div variants={item} className="mt-9 flex flex-wrap gap-3">
               <Button href="#work" direction="down">View work</Button>
