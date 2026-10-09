@@ -11,6 +11,7 @@ export function ProjectVisual({ motif, number }: { motif: string; number: string
         {motif === "vertex" && "VERIFY / RECOVER"}
         {motif === "route" && "SEARCH / ROUTE"}
         {motif === "ledger" && "GOVERN / GROUND"}
+        {motif === "source" && "RESEARCH / VERIFY"}
         {/* Enterprise E-commerce motif intentionally hidden until the project is revisited. */}
       </div>
     </div>

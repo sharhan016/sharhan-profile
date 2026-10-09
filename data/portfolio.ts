@@ -83,8 +83,9 @@ export const projects: PortfolioProject[] = [
     motif: "ledger",
     note: "Built around a synthetic banking-policy corpus; Sentence Transformers / CrossEncoder reranking",
     links: [
-      { label: "Live demo", href: "https://ledgerlens.sharhan.dev/" },
+      { label: "Live Demo", href: "https://ledgerlens.sharhan.dev/" },
       { label: "Source", href: "https://github.com/sharhan016/LedgerLens" },
+      { label: "Architecture", href: "https://ledgerlens.sharhan.dev/architecture" },
     ],
   },
   {
@@ -116,9 +117,33 @@ export const projects: PortfolioProject[] = [
     note: "Designed to enhance the efficiency and speed for flight search and booking in different portal applications",
     links: [{ label: "Source", href: "https://github.com/sharhan016/aiNad" }],
   },
-  /* Enterprise E-commerce is intentionally hidden until its portfolio treatment is revisited.
   {
     number: "04",
+    title: "SourcePilot",
+    description:
+      "A production-oriented procurement workspace that turns a plain-language requirement into a persistent, evidence-backed supplier recommendation through specialized research, verification, evaluation and recommendation agents.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "Alembic",
+      "PostgreSQL",
+      "React",
+      "TypeScript",
+      "Vite",
+      "Docker",
+    ],
+    motif: "source",
+    note: "Purchasing remains behind explicit human approval; SourcePilot never places an order",
+    links: [
+      { label: "Live Demo", href: "https://sourcepilot.sharhan.dev/" },
+      { label: "Source", href: "https://github.com/sharhan016/SourcePilot" },
+      { label: "Architecture", href: "https://sourcepilot.sharhan.dev/architecture" },
+    ],
+  },
+  /* Enterprise E-commerce is intentionally hidden until its portfolio treatment is revisited.
+  {
+    number: "05",
     title: "Enterprise E-commerce",
     description:
       "Large-scale Flutter engineering work involving production application development, analytics, QA and enterprise workflows.",

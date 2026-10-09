@@ -16,11 +16,11 @@ export function About() {
         </Reveal>
         <Reveal delay={0.08} className="lg:col-span-8">
           <p className="editorial-copy">
-            I build product software and AI systems where reliability, constraints and clear evidence matter.
+            I build AI systems and production software designed for reliability, grounded in evidence, and built for the real world.
           </p>
           <div className="mt-10 grid gap-6 text-base leading-7 text-ink/58 sm:grid-cols-2">
-            <p>My work spans governed retrieval, agent tooling, browser automation and production application engineering across Python, TypeScript and Flutter.</p>
-            <p>I like turning ambiguous workflows into bounded systems with explicit inputs, observable behavior, recoverable failure and software people can actually use.</p>
+            <p>My work spans governed retrieval, agent tooling, browser automation, and production software built to solve practical problems.</p>
+            <p>I turn ambiguous workflows into reliable systems with clear boundaries, observable behavior, and predictable outcomes.</p>
           </div>
         </Reveal>
       </div>
