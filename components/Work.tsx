@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 import { ProjectVisual } from "@/components/ProjectVisual";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { projects } from "@/data/portfolio";
@@ -56,19 +57,37 @@ export function Work() {
                   )}
                   {project.links && (
                     <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3" aria-label={`${project.title} links`}>
-                      {project.links.map((link) => (
-                        <a
-                          key={link.href}
-                          href={link.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label={`${link.label} for ${project.title} (opens in a new tab)`}
-                          className="inline-flex items-center gap-2 border-b border-white/32 pb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-white/68 transition-colors hover:border-white hover:text-white focus-ring"
-                        >
-                          {link.label}
-                          <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                        </a>
-                      ))}
+                      {project.links.map((link) => {
+                        const className = "inline-flex items-center gap-2 border-b border-white/32 pb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-white/68 transition-colors hover:border-white hover:text-white focus-ring";
+                        const content = (
+                          <>
+                            {link.label}
+                            <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                          </>
+                        );
+
+                        return link.href.startsWith("/") ? (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            aria-label={`${link.label} for ${project.title}`}
+                            className={className}
+                          >
+                            {content}
+                          </Link>
+                        ) : (
+                          <a
+                            key={link.href}
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`${link.label} for ${project.title} (opens in a new tab)`}
+                            className={className}
+                          >
+                            {content}
+                          </a>
+                        );
+                      })}
                     </div>
                   )}
                 </div>

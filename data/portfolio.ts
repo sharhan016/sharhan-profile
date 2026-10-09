@@ -96,29 +96,13 @@ export const projects: PortfolioProject[] = [
     technologies: ["Python", "Python standard library", "MCP", "Pytest", "Ruff"],
     motif: "vertex",
     note: "Development tool to enhance and audit the development lifecycle of an application",
-    links: [{ label: "Source", href: "https://github.com/sharhan016/vertex-harness" }],
+    links: [
+      { label: "Source", href: "https://github.com/sharhan016/vertex-harness" },
+      { label: "Architecture", href: "/work/vertex-harness/architecture" },
+    ],
   },
   {
     number: "03",
-    title: "AiNad",
-    description:
-      "A voice-first desktop assistant designed to accelerate flight search and booking workflows across portal applications through speech-driven automation.",
-    technologies: [
-      "Python",
-      "faster-whisper",
-      "Playwright",
-      "Tauri 2",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Rust",
-    ],
-    motif: "route",
-    note: "Designed to enhance the efficiency and speed for flight search and booking in different portal applications",
-    links: [{ label: "Source", href: "https://github.com/sharhan016/aiNad" }],
-  },
-  {
-    number: "04",
     title: "SourcePilot",
     description:
       "A production-oriented procurement workspace that turns a plain-language requirement into a persistent, evidence-backed supplier recommendation through specialized research, verification, evaluation and recommendation agents.",
@@ -139,6 +123,28 @@ export const projects: PortfolioProject[] = [
       { label: "Live Demo", href: "https://sourcepilot.sharhan.dev/" },
       { label: "Source", href: "https://github.com/sharhan016/SourcePilot" },
       { label: "Architecture", href: "https://sourcepilot.sharhan.dev/architecture" },
+    ],
+  },
+  {
+    number: "04",
+    title: "AiNad",
+    description:
+      "A voice-first desktop assistant designed to accelerate flight search and booking workflows across portal applications through speech-driven automation.",
+    technologies: [
+      "Python",
+      "faster-whisper",
+      "Playwright",
+      "Tauri 2",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Rust",
+    ],
+    motif: "route",
+    note: "Designed to enhance the efficiency and speed for flight search and booking in different portal applications",
+    links: [
+      { label: "Source", href: "https://github.com/sharhan016/aiNad" },
+      { label: "Architecture", href: "/work/ainad/architecture" },
     ],
   },
   /* Enterprise E-commerce is intentionally hidden until its portfolio treatment is revisited.
