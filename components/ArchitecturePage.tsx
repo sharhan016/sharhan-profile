@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { ArchitectureModel } from "@/data/architectures";
 import { MermaidDiagram } from "@/components/ui/MermaidDiagram";
+import { VertexArchitectureDiagram } from "@/components/VertexArchitectureDiagram";
 
 export function ArchitecturePage({ model }: { model: ArchitectureModel }) {
   return (
@@ -36,11 +37,15 @@ export function ArchitecturePage({ model }: { model: ArchitectureModel }) {
 
         <section className="mt-12 border-y border-ink/16 bg-wash px-4 py-8 sm:px-8 sm:py-10 lg:mt-16 lg:px-12 lg:py-14">
           <h2 className="sr-only">System architecture diagram</h2>
-          <MermaidDiagram
-            chart={model.diagram}
-            mobileChart={model.mobileDiagram}
-            label={model.accessibleLabel}
-          />
+          {model.presentation === "vertex-stages" ? (
+            <VertexArchitectureDiagram label={model.accessibleLabel} />
+          ) : (
+            <MermaidDiagram
+              chart={model.diagram}
+              mobileChart={model.mobileDiagram}
+              label={model.accessibleLabel}
+            />
+          )}
         </section>
 
         <div className="mt-6 flex flex-wrap justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/45">
