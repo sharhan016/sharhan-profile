@@ -363,6 +363,23 @@ Source: `https://github.com/sharhan016/vertex-harness`
 
 Visual motif: concentric system/orbit geometry with the caption `VERIFY / RECOVER`.
 
+Architecture page: `/work/vertex-harness/architecture`
+
+The Vertex architecture page uses a portfolio-native interactive system map rather
+than Mermaid. Its typed graph is source-backed against a pinned Vertex Harness
+revision and validates node, relationship, view, layout, and evidence references at
+build time. Visitors can switch between the whole system, lifecycle and proof, and
+repository intelligence views; selecting a node highlights its connected paths and
+opens exact GitHub source evidence. The desktop view is a deliberately positioned
+technical canvas. Narrow screens receive an ordered, keyboard-accessible card view
+with the same inspector content. The selected view and node are restored from the URL
+fragment.
+
+Relationship styling is semantic: solid paths change state or invoke commands,
+dashed paths are read-only, dotted paths are derived projections, and the clay-red
+accent identifies verified proof and the current selection. MCP and dashboard access
+remain explicitly read-only; the CLI is the audited state-changing interface.
+
 ### Project 03 — AiNad
 
 Description:

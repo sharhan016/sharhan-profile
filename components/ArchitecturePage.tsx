@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { ArchitectureModel } from "@/data/architectures";
 import { MermaidDiagram } from "@/components/ui/MermaidDiagram";
-import { VertexArchitectureDiagram } from "@/components/VertexArchitectureDiagram";
+import { VertexArchitectureExplorer } from "@/components/architecture/VertexArchitectureExplorer";
 
 export function ArchitecturePage({ model }: { model: ArchitectureModel }) {
   return (
@@ -37,8 +37,8 @@ export function ArchitecturePage({ model }: { model: ArchitectureModel }) {
 
         <section className="mt-12 border-y border-ink/16 bg-wash px-4 py-8 sm:px-8 sm:py-10 lg:mt-16 lg:px-12 lg:py-14">
           <h2 className="sr-only">System architecture diagram</h2>
-          {model.presentation === "vertex-stages" ? (
-            <VertexArchitectureDiagram label={model.accessibleLabel} />
+          {model.presentation === "vertex-explorer" ? (
+            <VertexArchitectureExplorer label={model.accessibleLabel} />
           ) : (
             <MermaidDiagram
               chart={model.diagram}
